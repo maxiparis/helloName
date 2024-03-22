@@ -24,9 +24,19 @@ class ViewController: UIViewController {
     
     
     @IBAction func helloButtonClicked(_ sender: UIButton) {
+        
+        let textFieldIsEmpty = nameText.text == ""
+        if textFieldIsEmpty {
+            afterClickSaluteText.text = "Please enter your name in the text field!"
+            afterClickSaluteText.isHidden = false
+            return
+        }
+        
+        //If is not emtpy
         afterClickSaluteText.text = "Hello " + nameText.text! + "!"
-        afterClickSaluteText.isHidden = false
         nameText.text = ""
+        afterClickSaluteText.isHidden = false
+        afterClickSaluteText.isHidden = false
     }
     
     func initializeHideKeyboard(){
@@ -40,7 +50,7 @@ class ViewController: UIViewController {
     }
     @objc func dismissMyKeyboard(){
         //endEditing causes the view (or one of its embedded text fields) to resign the first responder status.
-        //In short- Dismiss the active keyboard.
+        //In short - Dismiss the active keyboard.
         view.endEditing(true)
     }
    

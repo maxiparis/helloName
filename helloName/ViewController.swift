@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         instructionLabel.text = "Enter your name and select \"Hello!\""
         afterClickSaluteText.isHidden = true
         initializeHideKeyboard()
+        setupTextFields()
     }
     
     
